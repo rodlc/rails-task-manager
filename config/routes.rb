@@ -13,8 +13,9 @@ Rails.application.routes.draw do
   get "tasks/:id/edit", to: "tasks#edit", as: :edit_task
   patch "tasks/:id", to: "tasks#update"
 
-  get "tasks/:id", to: "tasks#show", as: :task
+  delete "tasks/:id", to: "tasks#destroy"
 
+  get "tasks/:id", to: "tasks#show", as: :task
   # Defines the root path route ("/")
   # root "posts#index"
 end
