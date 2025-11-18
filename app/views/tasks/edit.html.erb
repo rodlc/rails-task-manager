@@ -1,0 +1,22 @@
+<h1>Edit task</h1>
+
+<%= form_with model: @task do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :details %>
+    <%= form.text_area :details, rows: 5 %>
+  </div>
+
+  <div>
+    <%= form.check_box :completed %>
+    <%= form.label :completed, "Mark as completed" %>
+  </div>
+
+  <%= form.submit "Update Task" %>
+<% end %>
+
+<%= link_to "Back to list", tasks_path %>

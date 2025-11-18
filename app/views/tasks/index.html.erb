@@ -1,9 +1,19 @@
-<h1>☑️ My tasks</h1>
+<h1>My tasks</h1>
 
 <ul>
-  <% @tasks.each_with_index do |task, index| %>
+  <% @tasks.each do |task| %>
     <li>
-      <%= index + 1 %>- <%= link_to task.title, task_path(task) %>
+      <% if task.completed %>
+        ☑️
+      <% else %>
+        ☐
+      <% end %>
+      
+      <%= link_to task.title, task_path(task) %>
+      
+      <%= link_to "Edit", edit_task_path(task) %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "+ Add a new task", new_task_path %>
